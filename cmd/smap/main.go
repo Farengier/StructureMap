@@ -1,7 +1,8 @@
 package main
 
-import "fmt"
+import "github.com/Farengier/StructureMap/pkg/app/smap"
 
 func main() {
-	fmt.Print("Hello, i`m a smap program")
+	app := smap.Init()
+	app.Run()
 }
