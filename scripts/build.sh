@@ -8,8 +8,6 @@ BIN_DIR=${PROJECT_ROOT}/bin
 CUR_DIR=`pwd`
 
 cd ${BIN_DIR}
-
-echo Building
 go build -o ${EXECUTABLE} ${PROJECT_ROOT}/cmd/smap/main.go
 chmod +x ${BIN_DIR}/${EXECUTABLE}
 

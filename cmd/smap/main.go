@@ -1,8 +1,12 @@
 package main
 
-import "github.com/Farengier/StructureMap/pkg/app/smap"
+import (
+	"github.com/Farengier/StructureMap/pkg/app/smap"
+	"github.com/Farengier/StructureMap/pkg/config"
+)
 
 func main() {
-	app := smap.Init()
+	cfg := config.FromFile("config.cfg")
+	app := smap.Init(cfg)
 	app.Run()
 }

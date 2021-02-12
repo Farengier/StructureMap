@@ -14,4 +14,9 @@ clean:
 	@${SCRIPTS_DIR}/clean.sh
 	@echo "[OK]"
 
-.PHONY: build clean
+localize:
+	@printf "%-60s\n" "    **** Localization ****"
+	@${SCRIPTS_DIR}/localize.sh
+	@echo "[OK]"
+
+.PHONY: build clean localize
