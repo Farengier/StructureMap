@@ -1,27 +1,21 @@
 package config
 
-type Conf interface {
-	Locale() string
-	LocaleDomains() []string
-	LocaleDirectory() string
+type Conf struct {
 }
 
-type conf struct {
-}
-
-func (c conf) Locale() string {
+func (c Conf) Locale() string {
 	return "ru"
 }
 
-func (c conf) LocaleDirectory() string {
+func (c Conf) LocaleDirectory() string {
 	return "./localization/"
 }
 
-func (c conf) LocaleDomains() []string {
+func (c Conf) LocaleDomains() []string {
 	return []string{"messages"}
 }
 
 func FromFile(fileName string) Conf {
-	c := conf{}
+	c := Conf{}
 	return c
 }

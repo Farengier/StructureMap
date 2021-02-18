@@ -1,7 +1,6 @@
 # Project start
 ## TODO list
 ### First priority
- * I18n
  * Logging to stdout
  * Create main menu
  * Create project save file / struct with versioning for better backward compatibility
@@ -22,6 +21,6 @@
  * I18n gettetx 
    [repo](https://github.com/leonelquinteros/gotext) |
    [gettext](https://www.gnu.org/software/gettext/)
- * window managemet will be gotk3
-   [repo](https://github.com/gotk3/gotk3) | 
+ * window managemet will be ui
+   [repo](https://github.com/andlabs/ui) | 
    [habr](https://habr.com/ru/post/420035/)

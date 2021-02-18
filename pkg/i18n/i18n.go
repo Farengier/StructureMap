@@ -1,26 +1,31 @@
 package i18n
 
 import (
-	"github.com/Farengier/StructureMap/pkg/config"
 	"github.com/leonelquinteros/gotext"
 )
 
-type Loc interface {
+type cfg interface {
+	Locale() string
+	LocaleDirectory() string
+	LocaleDomains() []string
+}
+
+type Localizator interface {
 	T(message string, vars ...interface{}) string
 }
 
-type loc struct {
+type Loc struct {
 	gl *gotext.Locale
 }
 
-func Init(cfg config.Conf) Loc {
+func Init(cfg cfg) Loc {
 	l := gotext.NewLocale(cfg.LocaleDirectory(), cfg.Locale())
 	for _, d := range cfg.LocaleDomains() {
 		l.AddDomain(d)
 	}
-	return loc{gl: l}
+	return Loc{gl: l}
 }
 
-func (l loc) T(message string, vars ...interface{}) string {
+func (l Loc) T(message string, vars ...interface{}) string {
 	return l.gl.Get(message, vars...)
 }
